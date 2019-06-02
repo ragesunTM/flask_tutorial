@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>flask demo</title>
+</head>
+<body>
+    <form action="{{url_for('add_entry')}}" method="POST">
+        <input type="text" name='title'>
+        <input type="text" name='text'>
+        <input type="submit">
+    </form>
+
+    <ul class='entries'>
+        {% for entry in entries %}
+            <li>title: {{entry.title}} text: {{entry.text}}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
